@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/estilos.css">
+    <link rel="stylesheet" href="/Css/estilos.css">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <script defer src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="/Js/app.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -19,60 +21,69 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="/pagina.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Lista de Materias</a>
+                <a class="nav-link" href="/materias.html">Lista de Materias</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
 
-      <div class="container container-center col-sm-12">
+      <div class="container" id="containerCant">
+        <div class="row my-5" id="rowCantMaterias">
+          <div>
+            <form>
+              <h3 class="my-4">Ingresa el numero de materias: </h3>
+              <input type="number" class="form-control" id="cantMaterias" placeholder="Numero de materias">
+              <div class="buttons my-5" id="divBtnIngresar">
+                <button class="btn btn-success" id="ingresar">Ingresar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="container container-center col-sm-12" id="divContainer">
         <div class="row my-5">
             <div class="col-lg-12 col-sm-12 col-md-12 col-xl-4 mx-5">
-                <form>
+                <form id="formulario">
                     <div class="mb-3">
                         <label for="materia" class="form-label">Nombre de materia</label>
                         <input type="text" class="form-control" id="materia" placeholder="Ingresa nombre de la materia">
+                      </div>
+                      <div class="mb-3">
+                        <label for="creditos" class="form-label">Creditos de materia</label>
+                        <input type="text" class="form-control" id="creditos" placeholder="Ingresa cantidad de creditos">
                       </div>
                       <div class="mb-3">
                         <label for="puntos" class="form-label">Indice de materia</label>
                         <input class="form-control" id="puntos" rows="3" placeholder="Ingresa indice de materia"></input>
                       </div>
                       <div class="buttons my-5">
-                        <button class="btn btn-success">Aceptar</button>
-                        <button class="btn btn-danger">Cancelar</button>
+                        <button class="btn btn-success" id="btnAceptar">Aceptar</button>
+                        <button class="btn btn-danger" id="btnCancelar">Cancelar</button>
                       </div>
-                     
                 </form>
             </div>
 
             <div class="tabla col-lg-12 col-sm-12 col-md-12 col-xl-6 mx-5">
-                    <table class="table table-striped">
-                    <tr>
-                        <th class="table-dark">Materia</th>
-                        <th class="table-dark">Puntuacion</th>
-                    </tr>
-                    <tr>
-                        <td>Programacion 3</td>
-                        <td>A</td>
-                    </tr>
-                    <tr>
-                        <td>Programacion web</td>
-                        <td>A</td>
-                    </tr>
-                    <tr>
-                        <td>Calculo Integral</td>
-                        <td>B</td>
-                    </tr>
-                    <tr>
-                        <td>Metodologia de la Investigacion</td>
-                        <td>C</td>
-                    </tr>
+                    <table class="table table-striped" id="tabla">
+                      <tr>
+                          <th class="table-dark">Creditos</th>
+                          <th class="table-dark">Materia</th>
+                          <th class="table-dark">Indice</th>
+                      </tr>
                 </table>
             </div>
+        </div>
+
+        <div class="row my-5">
+          <h5>Indice: </h5>
+          <br>
+          <br>
+          <div id="indice"></div>
         </div>
     </div>
 </body>
