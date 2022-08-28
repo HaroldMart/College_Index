@@ -23,7 +23,7 @@ btnIngresar.addEventListener('click', (e) => {
 
     CANT_MATERIAS = cantMaterias.value;
 
-    if(CANT_MATERIAS != '') {
+    if(CANT_MATERIAS != '' && CANT_MATERIAS > 0) {
         
         containerIngresar.style.display = 'none'
 
@@ -34,7 +34,7 @@ btnIngresar.addEventListener('click', (e) => {
         swal.fire({
 
             icon: 'info',
-            text:'Ingresa una cantidad de materias',
+            text:'Ingresa una cantidad de materias valida',
             showConfirmButton: true,
             showClass: {
                 popup: 'animate__animated animate__shakeX'
